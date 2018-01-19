@@ -1,0 +1,24 @@
+---
+#Script creates a user to with specific password interactively
+# Hint: use this tool to make a hash out of your password to enter for the script 
+# python3 -c 'import crypt; print(crypt.crypt("test", crypt.mksalt(crypt.METHOD_SHA512)))'
+# @Author Victor Kritakis
+
+
+- hosts: all
+  vars_prompt:
+  
+  - name: pam_user
+    prompt: "Please enter the name of the user you wish to add"
+    private: no
+
+  - name: user_pass
+    prompt: "Please enter a password for this user "
+    private: no  
+
+  tasks: 
+  # create new user
+   - user: 
+        name: '{{ pam_user}}'
+        password: '{{user_pass}}'
+        state: present
