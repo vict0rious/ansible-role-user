@@ -1,7 +1,7 @@
 Role Name
 =========
 user
-#Script creates a user to host group with specific password 
+#Script creates a user with specific password 
 # Hint: use this tool to make a hash out of your password to enter for the script 
 # python3 -c 'import crypt; print(crypt.crypt("test", crypt.mksalt(crypt.METHOD_SHA512)))'
 Requirements
